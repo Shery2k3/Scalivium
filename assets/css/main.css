@@ -15962,7 +15962,7 @@ body.tp-magic-cursor #magic-cursor {
   width: 250px;
   border-radius: 50%;
   display: inline-block;
-  background-color: #FFEB53;
+  background-color: #3b82f6;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .crp-about-exp {
