@@ -25,6 +25,21 @@
     <!-- CSS here -->
     <!-- CSS here -->
 
+    <style>
+        /* Hide logo initially, show only when sticky navbar appears */
+        #header-sticky .tp-header-logo {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        /* Show logo when header becomes sticky (white navbar appears) */
+        #header-sticky.header-sticky .tp-header-logo {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+
 </head>
 
 <body class="tp-magic-cursor" data-bg-color="#f8fafc">
