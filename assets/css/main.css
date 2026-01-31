@@ -13652,16 +13652,17 @@ body.tp-magic-cursor #magic-cursor {
   width: 340px;
   padding: 40px;
   background-repeat: no-repeat;
-  color: #22C55E;
+  color: #FFFFFF;
 }
 .crp-hero-funfact-top-content {
   padding-right: 60px;
   margin-bottom: 45px;
+  color: #FFFFFF;
 }
 .crp-hero-funfact-top-content h4 {
   font-weight: 600;
   font-size: 28px;
-  color: #0F1115;
+  color: #FFFFFF;
   margin-bottom: 7px;
   font-family: var(--tp-ff-teko);
 }
@@ -13669,13 +13670,13 @@ body.tp-magic-cursor #magic-cursor {
   font-weight: 400;
   font-size: 17px;
   line-height: 1.4;
+  color: #FFFFFF;
   letter-spacing: -0.01em;
-  color: rgba(23, 49, 47, 0.8);
 }
 .crp-hero-funfact-item h4 {
   font-weight: 500;
   font-size: 70px;
-  color: #0F1115;
+  color: #FFFFFF;
   margin-bottom: 8px;
   line-height: 0.7;
   font-family: var(--tp-ff-teko);
@@ -13686,7 +13687,7 @@ body.tp-magic-cursor #magic-cursor {
   line-height: 1.5;
   margin-bottom: 0;
   letter-spacing: -0.01em;
-  color: rgba(23, 49, 47, 0.8);
+  color: #FFFFFF;
 }
 .crp-hero-funfact-wrap {
   margin-left: 20px;
