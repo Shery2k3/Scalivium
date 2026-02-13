@@ -15959,47 +15959,92 @@ body.tp-magic-cursor #magic-cursor {
   }
 }
 .crp-about-exp {
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 16px;
   display: inline-block;
-  background-color: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  padding: 30px 24px;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.25);
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .crp-about-exp {
-    height: 155px;
-    width: 155px;
-    display: grid;
+    max-width: 260px;
     margin-bottom: 20px;
-    place-content: center;
+    padding: 24px 20px;
   }
 }
-.crp-about-exp-item span {
+.crp-about-exp-item {
+  text-align: left;
+}
+.crp-about-exp-item .stat-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.crp-about-exp-item .stat-hero span {
   font-weight: 600;
-  font-size: 250px;
-  line-height: 0.5;
-  color: #0F1115;
-  margin-top: 35px;
-  margin-bottom: 10px;
+  font-size: 56px;
+  line-height: 1;
+  color: #ffffff;
   display: inline-block;
   letter-spacing: -0.02em;
   font-family: var(--tp-ff-teko);
 }
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .crp-about-exp-item span {
-    font-size: 80px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+.crp-about-exp-item .stat-hero .stat-plus {
+  font-size: 32px;
+  color: rgba(255,255,255,0.7);
 }
-.crp-about-exp-item i {
-  display: block;
+.crp-about-exp-item .stat-hero-label {
   font-weight: 500;
-  font-size: 28px;
-  line-height: 0.86;
-  color: #0F1115;
+  font-size: 15px;
+  line-height: 1.3;
+  color: rgba(255,255,255,0.85);
   font-style: normal;
+  font-family: var(--tp-ff-inter);
+  margin-bottom: 20px;
+  display: block;
+}
+.crp-about-exp-item .stat-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 0 0 16px 0;
+  border: none;
+}
+.crp-about-exp-item .stat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.crp-about-exp-item .stat-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  font-family: var(--tp-ff-inter);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.crp-about-exp-item .stat-list li:last-child {
+  border-bottom: none;
+}
+.crp-about-exp-item .stat-list li .stat-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #93c5fd;
+  flex-shrink: 0;
+}
+.crp-about-exp-item .stat-list li .stat-num {
+  font-weight: 700;
+  color: #ffffff;
   font-family: var(--tp-ff-teko);
+  font-size: 20px;
+  line-height: 1;
+  min-width: 36px;
 }
 .crp-about-btn-box {
   flex: 0 0 auto;
