@@ -370,6 +370,110 @@
             margin: 0 auto 0;
             border-radius: 2px;
         }
+        /* ========== Capsule Navigation ========== */
+        .cs-capsule-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            z-index: 999;
+            display: flex;
+            gap: 4px;
+            background: rgba(15, 17, 21, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 6px 8px;
+            border-radius: 100px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .cs-capsule-nav.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .cs-capsule-nav a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-family: "Teko", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .cs-capsule-nav a:hover {
+            color: #fff;
+        }
+        .cs-capsule-nav a.active {
+            background: #22C55E;
+            color: #fff;
+        }
+        @media (max-width: 767px) {
+            .cs-capsule-nav a .cs-nav-label {
+                display: none;
+            }
+            .cs-capsule-nav a {
+                padding: 8px 14px;
+            }
+            .cs-capsule-nav {
+                bottom: 20px;
+            }
+        }
+        /* ========== Hero Metric Highlight ========== */
+        .cs-hero-metric {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: linear-gradient(135deg, #22C55E 0%, #16a34a 100%);
+            color: #fff;
+            padding: 28px 35px;
+            border-radius: 14px;
+            margin: 40px 0 50px;
+        }
+        .cs-hero-metric-value {
+            font-family: "Teko", sans-serif;
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1;
+            white-space: nowrap;
+        }
+        .cs-hero-metric-desc {
+            font-family: "Inter", sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        @media (max-width: 575px) {
+            .cs-hero-metric {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+                padding: 20px 24px;
+            }
+            .cs-hero-metric-value {
+                font-size: 42px;
+            }
+        }
+        /* ========== Section Accent Line ========== */
+        .cs-section + .cs-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #22C55E, transparent);
+            opacity: 0.3;
+        }
     </style>
 
 </head>
@@ -569,7 +673,7 @@
                 <div id="down">
 
                     <!-- Case Study 01 -->
-                    <div class="cs-section">
+                    <div class="cs-section" id="cs-1">
                         <div class="cs-number">01</div>
                         <div class="container container-1330">
                             <div class="cs-header tp_fade_anim" data-delay=".3">
@@ -629,6 +733,11 @@
                                 </div>
                             </div>
 
+                            <div class="cs-hero-metric tp_fade_anim" data-delay=".5">
+                                <div class="cs-hero-metric-value">782%</div>
+                                <div class="cs-hero-metric-desc">Revenue growth in 6 months — from $9,300 to $82,000 monthly revenue</div>
+                            </div>
+
                             <div class="cs-execution tp_fade_anim" data-delay=".5">
                                 <h5 class="cs-block-title">Execution Steps</h5>
                                 <div class="cs-steps">
@@ -686,7 +795,7 @@
                     </div>
 
                     <!-- Case Study 02 -->
-                    <div class="cs-section">
+                    <div class="cs-section" id="cs-2">
                         <div class="cs-number">02</div>
                         <div class="container container-1330">
                             <div class="cs-header tp_fade_anim" data-delay=".3">
@@ -738,6 +847,11 @@
                                         <li>Product targeting campaigns</li>
                                     </ul>
                                 </div>
+                            </div>
+
+                            <div class="cs-hero-metric tp_fade_anim" data-delay=".5">
+                                <div class="cs-hero-metric-value">3.5×</div>
+                                <div class="cs-hero-metric-desc">Revenue multiplied while cutting ACOS nearly in half — from 61% down to 32%</div>
                             </div>
 
                             <div class="cs-execution tp_fade_anim" data-delay=".5">
@@ -794,7 +908,7 @@
                     </div>
 
                     <!-- Case Study 03 -->
-                    <div class="cs-section">
+                    <div class="cs-section" id="cs-3">
                         <div class="cs-number">03</div>
                         <div class="container container-1330">
                             <div class="cs-header tp_fade_anim" data-delay=".3">
@@ -831,6 +945,11 @@
                                         <li>Product differentiation strategy</li>
                                     </ul>
                                 </div>
+                            </div>
+
+                            <div class="cs-hero-metric tp_fade_anim" data-delay=".5">
+                                <div class="cs-hero-metric-value">$41K</div>
+                                <div class="cs-hero-metric-desc">Monthly revenue reached from zero in just 90 days with a brand-new product</div>
                             </div>
 
                             <div class="cs-execution tp_fade_anim" data-delay=".5">
@@ -890,7 +1009,7 @@
                     </div>
 
                     <!-- Case Study 04 -->
-                    <div class="cs-section">
+                    <div class="cs-section" id="cs-4">
                         <div class="cs-number">04</div>
                         <div class="container container-1330">
                             <div class="cs-header tp_fade_anim" data-delay=".3">
@@ -938,6 +1057,11 @@
                                         <li>Pricing optimization</li>
                                     </ul>
                                 </div>
+                            </div>
+
+                            <div class="cs-hero-metric tp_fade_anim" data-delay=".5">
+                                <div class="cs-hero-metric-value">144%</div>
+                                <div class="cs-hero-metric-desc">Conversion rate increase through listing optimization alone — from 9% to 22%</div>
                             </div>
 
                             <div class="cs-execution tp_fade_anim" data-delay=".5">
@@ -992,7 +1116,7 @@
                     </div>
 
                     <!-- Case Study 05 -->
-                    <div class="cs-section">
+                    <div class="cs-section" id="cs-5">
                         <div class="cs-number">05</div>
                         <div class="container container-1330">
                             <div class="cs-header tp_fade_anim" data-delay=".3">
@@ -1027,6 +1151,11 @@
                                         <li>Unit cost optimization</li>
                                     </ul>
                                 </div>
+                            </div>
+
+                            <div class="cs-hero-metric tp_fade_anim" data-delay=".5">
+                                <div class="cs-hero-metric-value">128%</div>
+                                <div class="cs-hero-metric-desc">Profit margin increase through supply chain optimization — from 14% to 32%</div>
                             </div>
 
                             <div class="cs-execution tp_fade_anim" data-delay=".5">
@@ -1247,6 +1376,67 @@
     <script type="module" src="assets/js/skew-slider/index.js"></script>
     <script type="module" src="assets/js/img-revel/index.js"></script>
 
+
+    <!-- Capsule Navigation -->
+    <nav class="cs-capsule-nav" id="csCapsuleNav">
+        <a href="#cs-1"><span class="cs-nav-num">01</span><span class="cs-nav-label">Kitchen</span></a>
+        <a href="#cs-2"><span class="cs-nav-num">02</span><span class="cs-nav-label">Fitness</span></a>
+        <a href="#cs-3"><span class="cs-nav-num">03</span><span class="cs-nav-label">Launch</span></a>
+        <a href="#cs-4"><span class="cs-nav-num">04</span><span class="cs-nav-label">Pet</span></a>
+        <a href="#cs-5"><span class="cs-nav-num">05</span><span class="cs-nav-label">Supply</span></a>
+    </nav>
+
+    <!-- Capsule Nav Scroll Spy -->
+    <script>
+    (function() {
+        var nav = document.getElementById('csCapsuleNav');
+        if (!nav) return;
+        var sections = document.querySelectorAll('.cs-section[id]');
+        var links = nav.querySelectorAll('a');
+        var downSection = document.getElementById('down');
+
+        function update() {
+            if (downSection) {
+                var rect = downSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.5) {
+                    nav.classList.add('visible');
+                } else {
+                    nav.classList.remove('visible');
+                }
+            }
+            var current = '';
+            sections.forEach(function(section) {
+                var r = section.getBoundingClientRect();
+                if (r.top <= 250) {
+                    current = section.getAttribute('id');
+                }
+            });
+            links.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+            requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+
+        links.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    if (typeof ScrollSmoother !== 'undefined' && ScrollSmoother.get()) {
+                        ScrollSmoother.get().scrollTo(target, true, 'top 80px');
+                    } else {
+                        var top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    })();
+    </script>
 
     <!-- JS here -->
     <!-- JS here -->
